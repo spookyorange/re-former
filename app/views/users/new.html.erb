@@ -2,6 +2,18 @@
   HMMMM
 </h1>
 
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, "What do you want us to call?" %>
+  <%= form.text_field :username, placeholder: "Your name Here!" %><br><br>
+  <%= form.label :email, "What is your e-mail address" %>
+  <%= form.text_field :email, placeholder: "example@example.example" %><br><br>
+  <%= form.label :password, "We need password" %>
+  <%= form.text_field :password, placeholder: "should be secure mate" %><br><br>
+  <%= form.submit %>
+<% end %>
+
+
+<!--
 <%= form_tag("/users", method: "post") do %>
   <%= label_tag(:username, "username") %>
   <%= text_field_tag(:username) %><br><br>
@@ -14,10 +26,6 @@
 
 
 
-
-
-
-<!--
 <br>
 <form action="/users" method="post" accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
